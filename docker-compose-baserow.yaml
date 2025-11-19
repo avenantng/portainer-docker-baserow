@@ -1,0 +1,14 @@
+version: '3.0'
+services:
+  baserow:
+    container_name: baserow
+    image: baserow/baserow:2.0.1
+    environment:
+      BASEROW_PUBLIC_URL: 'https://baserow.avenant.stream'
+    ports:
+      - "8393:80"
+      - "7443:443"
+    volumes:
+      - /mnt/lagerung/docker/baserow_data:/baserow/data
+volumes:
+  baserow_data:
